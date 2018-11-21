@@ -22,7 +22,6 @@ app.get('/', (req, res) => {
     });
 });
 
-
 // Finally serve the application
 const port = process.env['PORT'] || 8081;
 server.listen(port, () => {

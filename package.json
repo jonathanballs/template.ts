@@ -4,10 +4,12 @@
   "description": "A template for a multiplayer io game",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon dist/app.js",
+    "start": "node dist/app.js",
+    "start:watch": "nodemon dist/app.js",
     "build": "webpack -p",
+    "build:watch": "webpack --watch",
     "test": "jest",
-    "start": "node dist/app.js"
+    "test:watch": "jest --watch"
   },
   "author": "Jonathan Balls",
   "license": "MIT",
