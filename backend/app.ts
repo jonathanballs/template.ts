@@ -1,12 +1,12 @@
 import { createServer, Server } from 'http';
 import * as path from 'path';
-import * as express from 'express';
-import * as socketIo from 'socket.io';
+import SocketIO from 'socket.io';
+import express from 'express';
 
 // Create server
 const app = express();
 const server = createServer(app);
-const io = socketIo(server);
+const socket = SocketIO(server);
 
 // Configure templating
 app.set('view engine', 'pug');
@@ -30,6 +30,6 @@ server.listen(port, () => {
 });
 
 // Handle socket.io connections
-io.on('connection', function(socket) {
+socket.on('connection', function(socket) {
   console.log(`Connection recieved from ${socket.id}`);
 });

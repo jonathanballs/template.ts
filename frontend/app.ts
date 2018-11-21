@@ -1,6 +1,6 @@
-import * as socketIo from 'socket.io-client'
-const io = socketIo();
+import io from 'socket.io-client'
+const socket = io();
 
-io.on('connect', () => {
+socket.on('connect', () => {
     console.log("Connected");
 });

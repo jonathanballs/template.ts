@@ -2,7 +2,16 @@ const path = require('path');
 const NodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
+const stats = {
+  hash: false,
+  entrypoints: false,
+  assets: false,
+  chunks: false,
+  exclude: /node_modules/,
+}
+
 const backend = {
+  name: 'Backend',
   entry: './backend/app.ts',
   mode: 'development',
   target: 'node',
@@ -36,9 +45,11 @@ const backend = {
       },
     ]),
   ],
+  stats,
 };
 
 const frontend = {
+  name: 'Frontend',
   entry: './frontend/app.ts',
   mode: 'development',
   module: {
@@ -46,7 +57,6 @@ const frontend = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        // exclude: /node_modules/
       }
     ]
   },
@@ -66,6 +76,7 @@ const frontend = {
       },
     ]),
   ],
+  stats,
 };
 
 module.exports = [
