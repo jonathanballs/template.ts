@@ -18,7 +18,7 @@ app.use('/static', express.static(path.join(__dirname, 'static')));
 // Render index.html
 app.get('/', (req, res) => {
     res.render('index', {
-        title: "The Stranded 2",
+        title: "The Template",
     });
 });
 

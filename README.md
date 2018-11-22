@@ -1,6 +1,6 @@
 # Template.ts [![Build Status](https://travis-ci.org/jonathanballs/template.ts.svg?branch=master)](https://travis-ci.org/jonathanballs/template.ts)
 
-A template for typescript/express projects.
+A template for typescript/express projects. Webpack for building, Jest for testing, Travis for CI, Docker/Dokku for deployment.
 
 ## Getting started
 * `yarn install`: to install dependencies
@@ -10,7 +10,7 @@ A template for typescript/express projects.
 ## All commands
 All of the run-scripts have a "watch mode" which reruns the command when files change.
 
-* `yarn run build`: Compiles the client and server
+* `yarn run build`: Compiles the frontend and backend
 * `yarn run build:watch`: in watch mode
 * `yarn run start`: Starts the server
 * `yarn run start:watch`: in watch mode
@@ -19,11 +19,13 @@ All of the run-scripts have a "watch mode" which reruns the command when files c
 
 ## Environment variables
 
-* `PORT`: The port on which the project is served
+* `PORT`: The port on which the project is served. Default is 8081
+
+## Setting up dokku
+The repo can be deployed immediately to a dokku container however extra steps must be taken to implement continuous integration.
 
 ## Todo
 
-- [ ] Deploy to dockerhub & dokku
 - [ ] Sentry integration/remote debugging. (insight to running process).
 - [ ] Joi
 - [ ] Editorconfig/eslint
